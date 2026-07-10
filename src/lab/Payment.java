@@ -7,7 +7,11 @@ public class Payment {
      * @return true ถ้าเก็บเงินได้
      */
     public static boolean canCharge(User u) {
+
+        if(u==null) return false;
+        if (!u.active) return false;
+        if (u.balance<=0) return false;
         // TODO: เขียนแบบ guard clause (return เร็ว) แทน if ซ้อนหลายชั้น
-        return false;
+        return true;
     }
 }
